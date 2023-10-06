@@ -25,6 +25,7 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
+          child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
@@ -67,7 +68,7 @@ class DetailScreen extends StatelessWidget {
                       SizedBox(height: 8.0),
                       Text('RP 25.000')
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
@@ -79,9 +80,39 @@ class DetailScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
+            SizedBox(
+              height: 150,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.asset('images/farmhouse-lembang.jpg'),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.asset('images/photo3jpg.jpg'),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.asset('images/liburan-di-farmhouse.jpg'),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
-      ),
+        // ),
+      )),
     );
   }
 }
